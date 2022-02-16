@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "../components/Navbar/Navbar";
+import WelcomeScreen from "../components/WelcomeScreen/WelcomeScreen";
 
 const Home = () => {
-  return <Navbar />;
+  return <WelcomeScreen />;
 };
 
 export default Home;
