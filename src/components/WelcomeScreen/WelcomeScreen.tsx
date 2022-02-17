@@ -6,8 +6,8 @@ const WelcomeScreen = () => {
     <>
       <s.Container>
         <s.Wrapper>
-          <s.Video src="him.mp4" muted loop autoPlay />
-          <s.Label to="/him">HIM</s.Label>
+          <s.Video src="her.mp4" muted loop autoPlay />
+          <s.Label to="/her">HER</s.Label>
         </s.Wrapper>
         <s.Logo>
           DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER.
@@ -19,8 +19,8 @@ const WelcomeScreen = () => {
           DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER. DAPPER.
         </s.Logo>
         <s.Wrapper>
-          <s.Video src="her.mp4" muted loop autoPlay />
-          <s.Label to="/her">HER</s.Label>
+          <s.Video src="him.mp4" muted loop autoPlay />
+          <s.Label to="/him">HIM</s.Label>
         </s.Wrapper>
       </s.Container>
     </>

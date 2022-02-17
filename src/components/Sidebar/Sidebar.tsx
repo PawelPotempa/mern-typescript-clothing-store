@@ -1,30 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { herNavData, himNavData } from "../navigationData";
 import Submenu from "../Submenu/Submenu";
 import * as s from "./sidebarStyles";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
-  const [gender, setGender] = useState("HER");
+  // Redux states
+  const genderState = useSelector((state: any) => state.gender);
 
   return (
     <s.Container>
       <s.TabContainer>
         <s.TabLabel
           to="/her"
-          active={gender === "HER" && true}
-          onClick={() => setGender("HER")}
+          active={genderState.gender === "her" ? "true" : ""}
         >
           HER
         </s.TabLabel>
         <s.TabLabel
           to="/him"
-          active={gender === "HIM" && true}
-          onClick={() => setGender("HIM")}
+          active={genderState.gender === "him" ? "true" : ""}
         >
           HIM
         </s.TabLabel>
       </s.TabContainer>
-      {gender === "HIM" ? (
+      {genderState.gender === "him" ? (
         <s.ItemContainer>
           {himNavData.map((item, index) => {
             return <Submenu item={item} key={index} />;

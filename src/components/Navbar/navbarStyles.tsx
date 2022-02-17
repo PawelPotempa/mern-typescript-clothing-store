@@ -56,12 +56,6 @@ export const Center = styled.ul`
   `}
 `;
 
-export const MenuElement = styled.li`
-  list-style-type: none;
-  font-size: clamp(0.5rem, 1rem, 1.5rem);
-  padding: 15px;
-`;
-
 export const Right = styled.div`
   flex: 1;
   display: flex;

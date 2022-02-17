@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { device } from "../../mediaQueries";
 
 interface IProps {
-  active: boolean;
+  active: string;
 }
 
 export const Container = styled.div`
@@ -14,6 +15,10 @@ export const Container = styled.div`
   top: 40px;
   background-color: white;
   z-index: 99;
+
+  ${device.tablet`
+  display: none;
+  `}
 `;
 
 export const ItemContainer = styled.ul`
@@ -24,6 +29,10 @@ export const TabContainer = styled.div`
   background-color: #f8f8f8;
   display: flex;
   height: 40px;
+
+  ${device.tablet`
+  display: none;
+  `}
 `;
 
 export const TabLabel = styled(Link)<IProps>`
@@ -34,7 +43,7 @@ export const TabLabel = styled(Link)<IProps>`
   font-size: clamp(0.75rem, 1.25rem, 1.75rem);
   text-align: center;
   line-height: 40px;
-  border-bottom: ${(p) => (p.active ? "2px solid black" : "none")};
+  border-bottom: ${(p) => (p.active === "true" ? "2px solid black" : "none")};
 
   :last-child::before {
     content: "";

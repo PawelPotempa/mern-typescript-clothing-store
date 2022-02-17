@@ -1,55 +1,56 @@
+import React from "react";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
-import React, { MouseEvent, useState } from "react";
-import Dropdown from "../Dropdown/Dropdown";
-import { herNavData } from "../navigationData";
+import { herNavData, himNavData } from "../navigationData";
 import Sidebar from "../Sidebar/Sidebar";
 import * as s from "./navbarStyles";
+import { useDispatch, useSelector } from "react-redux";
+import { openModal, closeModal } from "../../redux/sidebarModal";
+import Submenu from "../Submenu/Submenu";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [target, setTarget] = useState("");
-
-  // Show product categories based on the moused over LIElement
-  const mouseOverHandler = (e: MouseEvent<HTMLLIElement>) => {
-    const listItem = e.target as HTMLLIElement;
-    setTarget(listItem.innerText);
-  };
-
-  // Hide product categories. Called on <s.Container> in an attempt to leave categories
-  // open until mouse leaves the navbar or dropdown completely.
-  const mouseLeaveHandler = (e: MouseEvent<HTMLElement>) => {
-    setTarget("");
-  };
-
-  // Insert a comment here. <----------------------------
-  const toggle = () => {
-    setOpen(!open);
-  };
+  // Redux states
+  const modalState = useSelector((state: any) => state.sidebarModal);
+  const genderState = useSelector((state: any) => state.gender);
+  const dispatch = useDispatch();
 
   return (
     <>
-      <s.Container onMouseLeave={mouseLeaveHandler}>
+      <s.Container>
         <s.Wrapper>
           <s.Left>
             <s.IconWrapper>
-              {!open ? (
-                <s.MenuIconBars style={{ fontSize: 32 }} onClick={toggle} />
+              {!modalState.toggle ? (
+                <s.MenuIconBars
+                  style={{ fontSize: 32 }}
+                  onClick={() => dispatch(openModal())}
+                />
               ) : (
-                <s.MenuIconClose style={{ fontSize: 32 }} onClick={toggle} />
+                <s.MenuIconClose
+                  style={{ fontSize: 32 }}
+                  onClick={() => dispatch(closeModal())}
+                />
               )}
             </s.IconWrapper>
-            <s.Logo to="/">DAPPER.</s.Logo>
+            <s.Logo to="/" onClick={() => dispatch(closeModal())}>
+              DAPPER.
+            </s.Logo>
           </s.Left>
-          <s.Center>
-            {herNavData.map((item, index) => {
-              return (
-                <s.MenuElement key={index} onMouseOver={mouseOverHandler}>
-                  {item.title}
-                </s.MenuElement>
-              );
-            })}
-          </s.Center>
+
+          {genderState.gender === "him" ? (
+            <s.Center>
+              {himNavData.map((item, index) => {
+                return <Submenu item={item} key={index} />;
+              })}
+            </s.Center>
+          ) : (
+            <s.Center>
+              {herNavData.map((item, index) => {
+                return <Submenu item={item} key={index} />;
+              })}
+            </s.Center>
+          )}
+
           <s.Right>
             <s.SearchContainer>
               <s.SearchInput />
@@ -65,8 +66,8 @@ const Navbar = () => {
           <s.SearchInput placeholder="What are you looking for?" />
         </s.MobileSearch>
       </s.Container>
-      {target.length > 0 && <Dropdown target={target} />}
-      {open && <Sidebar />}
+      {/* {target.length > 0 && <Dropdown target={target} />} */}
+      {modalState.toggle && <Sidebar />}
     </>
   );
 };
