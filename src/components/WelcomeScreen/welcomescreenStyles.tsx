@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { device } from "../../mediaQueries";
 
 export const Container = styled.div`
   position: fixed;
@@ -18,6 +19,10 @@ export const Video = styled.video`
   object-fit: cover;
   height: 100%;
   width: 100vw;
+
+  ${device.laptop`
+  object-position: 0 25%;
+  `}
 `;
 
 export const Label = styled(Link)`

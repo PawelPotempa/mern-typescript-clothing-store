@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Navbar from "../components/Navbar/Navbar";
 import { useDispatch } from "react-redux";
 import { genderHer } from "../redux/gender";
+import SaleBanner from "../components/SaleBanner/SaleBanner";
 
 const HerHome = () => {
   const dispatch = useDispatch();
@@ -11,7 +12,12 @@ const HerHome = () => {
     dispatch(genderHer());
   }, [dispatch]);
 
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <SaleBanner />
+    </>
+  );
 };
 
 export default HerHome;

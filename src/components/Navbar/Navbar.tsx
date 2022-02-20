@@ -10,6 +10,7 @@ import Submenu from "../Submenu/Submenu";
 
 const Navbar = () => {
   // Redux states
+  // TODO: Fix typing on 'state' in all of selectors and Redux altogether.
   const modalState = useSelector((state: any) => state.sidebarModal);
   const genderState = useSelector((state: any) => state.gender);
   const dispatch = useDispatch();

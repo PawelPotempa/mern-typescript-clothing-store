@@ -15,6 +15,7 @@ export const SidebarItem = styled.li`
   font-size: clamp(0.5rem, 1rem, 1.5rem);
   font-weight: bold;
   padding-bottom: 20px;
+  cursor: pointer;
 
   ${device.tablet`
   padding: 15px;
@@ -48,7 +49,11 @@ export const SubmenuItem = styled.li`
   list-style-type: none;
   padding: 0 0 20px 15px;
   text-transform: uppercase;
+  cursor: pointer;
+  z-index: 999;
+
   ${device.tablet`
   padding: 15px;
+  color: white;
   `}
 `;
