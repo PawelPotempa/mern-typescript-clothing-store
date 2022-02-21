@@ -3,7 +3,12 @@ import { device } from "../../mediaQueries";
 import { MenuOpen, Search, Close } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
-export const Container = styled.nav``;
+export const Container = styled.nav`
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  z-index: 99;
+`;
 
 export const Wrapper = styled.div`
   height: 40px;

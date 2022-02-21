@@ -7,7 +7,7 @@ interface IProps {
 }
 
 export const Container = styled.div`
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   height: calc(100% - 40px);
@@ -15,6 +15,7 @@ export const Container = styled.div`
   top: 40px;
   background-color: white;
   z-index: 99;
+  overflow: auto;
 
   ${device.tablet`
   display: none;

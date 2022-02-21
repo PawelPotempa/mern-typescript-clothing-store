@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { herNavData, himNavData } from "../navigationData";
 import Submenu from "../Submenu/Submenu";
 import * as s from "./sidebarStyles";
@@ -7,6 +7,14 @@ import { useSelector } from "react-redux";
 const Sidebar = () => {
   // Redux states
   const genderState = useSelector((state: any) => state.gender);
+
+  // Change overflow on body to hidden when Sidebar component is mounted, change it back to auto when it unmounts.
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  });
 
   return (
     <s.Container>

@@ -3,10 +3,12 @@ import { device } from "../../mediaQueries";
 
 export const BannerContainer = styled.div`
   position: relative;
-  height: calc(100vh - 80px);
+  padding-top: 80px;
+  height: 100vh;
 
   ${device.tablet`
-  height: calc(100vh - 40px);
+  padding-top: 40px;
+  height: 100vh;
   `}
 `;
 
@@ -14,6 +16,10 @@ export const Banner = styled.video`
   object-fit: cover;
   height: 100%;
   width: 100%;
+
+  ${device.mobileL`
+  object-position: 0 10%;
+  `}
 `;
 
 export const BannerText = styled.p`
