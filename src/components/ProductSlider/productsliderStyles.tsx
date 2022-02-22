@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { device } from "../../mediaQueries";
 
 export const Container = styled.div`
-  position: relative;
+  position: absolute;
+  top: 60%;
   width: 100%;
   overflow: hidden;
 `;

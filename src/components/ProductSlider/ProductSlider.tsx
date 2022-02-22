@@ -2,12 +2,9 @@ import React from "react";
 import * as s from "./productsliderStyles";
 import Slider from "react-slick";
 import { ArrowBackRounded, ArrowForwardRounded } from "@material-ui/icons";
-import { products } from "./productData";
+import { himProducts, herProducts } from "./productData";
 import { useSelector } from "react-redux";
-
-export interface IProps {
-  position: string;
-}
+import { IProps } from "../BannerSlider/BannerSlider";
 
 const ProductSlider = ({ position }: IProps) => {
   const genderState = useSelector((state: any) => state.gender);
@@ -73,7 +70,7 @@ const ProductSlider = ({ position }: IProps) => {
     <s.Container>
       {genderState.gender === "her" && position === "top" ? (
         <Slider {...settings}>
-          {products.map((product, index) => {
+          {herProducts.map((product, index) => {
             return (
               <s.SliderItem key={index}>
                 <s.ProductImage src={product.url}></s.ProductImage>
@@ -85,7 +82,7 @@ const ProductSlider = ({ position }: IProps) => {
         </Slider>
       ) : genderState.gender === "him" && position === "top" ? (
         <Slider {...settings}>
-          {products.map((product, index) => {
+          {himProducts.map((product, index) => {
             return (
               <s.SliderItem key={index}>
                 <s.ProductImage src={product.url}></s.ProductImage>

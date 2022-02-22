@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { device } from "../../mediaQueries";
 
-export const BannerContainer = styled.div`
+export const BannerContainer = styled.header`
   position: relative;
   padding-top: 80px;
   height: 100vh;

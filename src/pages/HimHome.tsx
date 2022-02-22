@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import Navbar from "../components/Navbar/Navbar";
 import { useDispatch } from "react-redux";
 import { genderHim } from "../redux/gender";
+import Navbar from "../components/Navbar/Navbar";
 import SaleBanner from "../components/SaleBanner/SaleBanner";
 import LookbookBanner from "../components/LookbookBanner/LookbookBanner";
-import ProductSlider from "../components/ProductSlider/ProductSlider";
+import BannerSlider from "../components/BannerSlider/BannerSlider";
 
 const HimHome = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const HimHome = () => {
       <Navbar />
       <SaleBanner />
       <LookbookBanner />
-      <ProductSlider position="top" />
+      <BannerSlider position="top" />
     </>
   );
 };

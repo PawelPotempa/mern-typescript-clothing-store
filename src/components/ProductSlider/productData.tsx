@@ -1,51 +1,114 @@
-export const products = [
+export const herProducts = [
   {
-    url: "Product1.jfif",
+    url: "herProduct1.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product2.webp",
+    url: "herProduct2.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product3.jfif",
+    url: "herProduct3.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product4.webp",
+    url: "herProduct4.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product5.jfif",
+    url: "herProduct5.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product6.jfif",
+    url: "herProduct6.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product7.jfif",
+    url: "herProduct7.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product8.jfif",
+    url: "herProduct8.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product9.jfif",
+    url: "herProduct9.jfif",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },
   {
-    url: "Product10.webp",
+    url: "herProduct10.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "herProduct11.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "herProduct12.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+];
+
+export const himProducts = [
+  {
+    url: "himProduct1.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct2.webp",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct3.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct4.webp",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct5.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct6.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct7.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct8.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct9.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "himProduct10.webp",
     name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     price: "199.00",
   },

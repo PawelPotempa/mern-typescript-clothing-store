@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { genderHer } from "../redux/gender";
 import SaleBanner from "../components/SaleBanner/SaleBanner";
 import LookbookBanner from "../components/LookbookBanner/LookbookBanner";
-import ProductSlider from "../components/ProductSlider/ProductSlider";
+import BannerSlider from "../components/BannerSlider/BannerSlider";
 
 const HerHome = () => {
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ const HerHome = () => {
       <Navbar />
       <SaleBanner />
       <LookbookBanner />
-      <ProductSlider position="top" />
+      <BannerSlider position="top" />
     </>
   );
 };

@@ -19,7 +19,7 @@ export const SquareContainer = styled.div`
 export const Square = styled.img`
   object-fit: cover;
   width: 100%;
-  height: 25rem;
+  height: 20rem;
   max-height: 80%;
 
   ${device.laptop`
