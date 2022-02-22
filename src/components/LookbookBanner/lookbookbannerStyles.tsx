@@ -19,7 +19,12 @@ export const SquareContainer = styled.div`
 export const Square = styled.img`
   object-fit: cover;
   width: 100%;
-  height: 80%;
+  height: 25rem;
+  max-height: 80%;
+
+  ${device.laptop`
+  height: auto;
+  `}
 `;
 
 export const PortraitContainer = styled.div`
@@ -39,11 +44,16 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem 5%;
+  padding: 0 5% 10% 5%;
+
+  ${device.mobileL`
+  padding: 0 5% 5% 5%;
+  `}
 
   ${device.tablet`
   grid-column: 3/4;
   justify-content: center;
+  padding: 1rem 5%;
   `}
 `;
 
