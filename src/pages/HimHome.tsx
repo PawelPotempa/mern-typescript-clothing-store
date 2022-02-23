@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import SaleBanner from "../components/SaleBanner/SaleBanner";
 import LookbookBanner from "../components/LookbookBanner/LookbookBanner";
 import BannerSlider from "../components/BannerSlider/BannerSlider";
+import DoubleBanner from "../components/DoubleBanner/DoubleBanner";
 
 const HimHome = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ const HimHome = () => {
       <Navbar />
       <SaleBanner />
       <LookbookBanner />
-      <BannerSlider position="top" />
+      <BannerSlider position="top" background="himBanner.jpg" />
+      <DoubleBanner />
     </>
   );
 };

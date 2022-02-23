@@ -26,11 +26,20 @@ export const BannerText = styled.p`
   position: absolute;
   bottom: 0;
   padding: 4rem 2rem;
-  font-size: clamp(1.5rem, 3rem, 4rem);
   color: white;
+  font-size: 3.5rem;
+  font-weight: 700;
+
+  ${device.tablet`
+font-size: 5rem;
+`}
 
   :last-of-type {
-    font-size: clamp(1rem, 1.5rem, 2rem);
+    font-size: 1.5rem;
     padding: 2rem 2rem;
+
+    ${device.tablet`
+font-size: 2.5rem;
+`}
   }
 `;

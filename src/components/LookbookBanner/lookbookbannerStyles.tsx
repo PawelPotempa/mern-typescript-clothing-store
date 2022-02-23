@@ -59,19 +59,24 @@ export const InfoContainer = styled.div`
 
 export const Label = styled.p`
   text-align: center;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  max-width: 10rem;
+  max-width: 15rem;
 
   ${device.tablet`
   grid-column: 3/4;
   justify-content: center;
-  max-width: 16rem;
+  max-width: 25rem;
+  `}
+
+  ${device.laptop`
+    font-size: 4.5rem;
   `}
 `;
 
 export const Description = styled.p`
+  font-size: 0.9rem;
   margin-bottom: 2rem;
   text-align: center;
 `;

@@ -5,6 +5,7 @@ import { genderHer } from "../redux/gender";
 import SaleBanner from "../components/SaleBanner/SaleBanner";
 import LookbookBanner from "../components/LookbookBanner/LookbookBanner";
 import BannerSlider from "../components/BannerSlider/BannerSlider";
+import DoubleBanner from "../components/DoubleBanner/DoubleBanner";
 
 const HerHome = () => {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ const HerHome = () => {
       <Navbar />
       <SaleBanner />
       <LookbookBanner />
-      <BannerSlider position="top" />
+      <BannerSlider position="top" background="herBanner.jpg" />
+      <DoubleBanner />
     </>
   );
 };

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import { device } from "../../mediaQueries";
 
-export const Container = styled.div`
-  position: absolute;
-  top: 60%;
-  width: 100%;
+interface IProps {
+  banner: string;
+}
+
+export const Container = styled.div<IProps>`
+  padding-top: ${(p) => (p.banner === "top" ? "30rem" : "3%")};
   overflow: hidden;
 `;
 

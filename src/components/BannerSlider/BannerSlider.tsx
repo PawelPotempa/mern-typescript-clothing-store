@@ -5,9 +5,10 @@ import { useSelector } from "react-redux";
 
 export interface IProps {
   position: string;
+  background?: string;
 }
 
-const BannerSlider = ({ position }: IProps) => {
+const BannerSlider = ({ position, background }: IProps) => {
   const genderState = useSelector((state: any) => state.gender);
 
   return (
@@ -15,16 +16,25 @@ const BannerSlider = ({ position }: IProps) => {
       <s.BannerSlider>
         {genderState.gender === "her" ? (
           <s.Banner>
-            <s.BannerImage src="herBanner.jpg"></s.BannerImage>
-            <s.BannerSlogan>INSPIRACJE</s.BannerSlogan>
+            {/* <s.BannerImage src="herBanner.jpg"></s.BannerImage> */}
+            <s.BannerSlogan>get inspired.</s.BannerSlogan>
           </s.Banner>
         ) : (
           <s.Banner>
-            <s.BannerImage src="himBanner.jpg"></s.BannerImage>
-            <s.BannerSlogan>INSPIRACJE</s.BannerSlogan>
+            {/* <s.BannerImage src="himBanner.jpg"></s.BannerImage> */}
+            <s.BannerSlogan>
+              get
+              <br />
+              inspired.
+            </s.BannerSlogan>
           </s.Banner>
         )}
-        <ProductSlider position={position} />
+        <s.ProductSliderContainer
+          style={{ backgroundImage: `url("${background}")` }}
+          background={genderState.gender}
+        >
+          <ProductSlider position={position} />
+        </s.ProductSliderContainer>
       </s.BannerSlider>
     </>
   );

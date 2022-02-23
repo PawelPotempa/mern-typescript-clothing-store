@@ -11,19 +11,8 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
   }
 
-  .slick-arrow {
-    color: red;
-    position: absolute;
-    z-index: 99;
-  }
-
-  .slick-prev {
-    top: 50%;
-  }
-
-  .slick-next {
-    top: 50%;
-    right: 0;
+  .slick-slider {
+position: relative;
   }
 
 `;

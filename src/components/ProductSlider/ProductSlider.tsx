@@ -40,21 +40,21 @@ const ProductSlider = ({ position }: IProps) => {
     nextArrow: <ArrowForward />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1200,
         settings: {
           slidesToShow: 3.5,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 800,
+        breakpoint: 1000,
         settings: {
           slidesToShow: 2.5,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 600,
         settings: {
           slidesToShow: 1.5,
           slidesToScroll: 1,
@@ -67,7 +67,7 @@ const ProductSlider = ({ position }: IProps) => {
   // TODO: Allow for manipulation of displayed products directly from admin dashboard
   // (select products, pop them into a new array, map that array depending on ProductSlider "position" property)
   return (
-    <s.Container>
+    <s.Container banner={position}>
       {genderState.gender === "her" && position === "top" ? (
         <Slider {...settings}>
           {herProducts.map((product, index) => {
@@ -92,7 +92,19 @@ const ProductSlider = ({ position }: IProps) => {
             );
           })}
         </Slider>
-      ) : null}
+      ) : (
+        <Slider {...settings}>
+          {himProducts.map((product, index) => {
+            return (
+              <s.SliderItem key={index}>
+                <s.ProductImage src={product.url}></s.ProductImage>
+                <s.ProductName>{product.name}</s.ProductName>
+                <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
+              </s.SliderItem>
+            );
+          })}
+        </Slider>
+      )}
     </s.Container>
   );
 };
