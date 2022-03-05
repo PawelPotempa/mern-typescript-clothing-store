@@ -66,7 +66,6 @@ const Submenu = ({ item }: IProps) => {
           </s.IconWrapper>
         ) : null}
       </s.ItemWrapper>
-      {isTabletOrMobile ? console.log("MOBILE") : console.log("DESKTOP")}
       <s.SubnavWrapper
         onMouseEnter={isTabletOrMobile ? () => false : mouseOverHandler}
         onMouseLeave={isTabletOrMobile ? () => false : mouseLeaveHandler}

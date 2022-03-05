@@ -6,7 +6,7 @@ interface IProps {
 }
 
 export const Container = styled.div<IProps>`
-  padding-top: ${(p) => (p.banner === "top" ? "30rem" : "3%")};
+  padding-top: ${(p) => (p.banner === "top" ? "30rem" : "4rem")};
   overflow: hidden;
 `;
 

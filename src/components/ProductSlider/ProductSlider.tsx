@@ -2,7 +2,7 @@ import React from "react";
 import * as s from "./productsliderStyles";
 import Slider from "react-slick";
 import { ArrowBackRounded, ArrowForwardRounded } from "@material-ui/icons";
-import { himProducts, herProducts } from "./productData";
+import { himProducts, herProducts, centerProducts } from "./productData";
 import { useSelector } from "react-redux";
 import { IProps } from "../BannerSlider/BannerSlider";
 
@@ -94,7 +94,7 @@ const ProductSlider = ({ position }: IProps) => {
         </Slider>
       ) : (
         <Slider {...settings}>
-          {himProducts.map((product, index) => {
+          {centerProducts.map((product, index) => {
             return (
               <s.SliderItem key={index}>
                 <s.ProductImage src={product.url}></s.ProductImage>

@@ -30,20 +30,7 @@ font-size: 5rem;
 `}
 `;
 
-export const BannerImage = styled.img`
-  object-fit: cover;
-  object-position: 50% 0;
-  width: 100%;
-  min-height: 18rem;
-
-  ${device.tablet`
-object-position: 0 0;
-`}
-`;
-
 export const ProductSliderContainer = styled.div<IProps>`
-  /* background-image: url("himBanner.jpg"); */
-
   background-repeat: no-repeat;
   background-position-x: ${(p) => (p.background === "her" ? "70%" : "25%")};
 `;

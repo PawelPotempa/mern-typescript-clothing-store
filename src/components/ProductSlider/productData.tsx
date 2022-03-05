@@ -113,3 +113,36 @@ export const himProducts = [
     price: "199.00",
   },
 ];
+
+export const centerProducts = [
+  {
+    url: "centerProduct1.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "centerProduct2.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "centerProduct3.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "centerProduct4.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "centerProduct5.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+  {
+    url: "centerProduct6.jfif",
+    name: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    price: "199.00",
+  },
+];

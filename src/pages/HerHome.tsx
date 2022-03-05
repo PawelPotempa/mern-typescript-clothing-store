@@ -6,6 +6,9 @@ import SaleBanner from "../components/SaleBanner/SaleBanner";
 import LookbookBanner from "../components/LookbookBanner/LookbookBanner";
 import BannerSlider from "../components/BannerSlider/BannerSlider";
 import DoubleBanner from "../components/DoubleBanner/DoubleBanner";
+import CenterBanner from "../components/CenterBanner/CenterBanner";
+import ProductSlider from "../components/ProductSlider/ProductSlider";
+import Footer from "../components/Footer/Footer";
 
 const HerHome = () => {
   const dispatch = useDispatch();
@@ -22,6 +25,9 @@ const HerHome = () => {
       <LookbookBanner />
       <BannerSlider position="top" background="herBanner.jpg" />
       <DoubleBanner />
+      <CenterBanner />
+      <ProductSlider position="bottom" />
+      <Footer />
     </>
   );
 };

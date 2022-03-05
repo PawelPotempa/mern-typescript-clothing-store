@@ -16,17 +16,11 @@ const BannerSlider = ({ position, background }: IProps) => {
       <s.BannerSlider>
         {genderState.gender === "her" ? (
           <s.Banner>
-            {/* <s.BannerImage src="herBanner.jpg"></s.BannerImage> */}
             <s.BannerSlogan>get inspired.</s.BannerSlogan>
           </s.Banner>
         ) : (
           <s.Banner>
-            {/* <s.BannerImage src="himBanner.jpg"></s.BannerImage> */}
-            <s.BannerSlogan>
-              get
-              <br />
-              inspired.
-            </s.BannerSlogan>
+            <s.BannerSlogan>get inspired.</s.BannerSlogan>
           </s.Banner>
         )}
         <s.ProductSliderContainer

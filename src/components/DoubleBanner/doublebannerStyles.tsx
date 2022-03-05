@@ -5,10 +5,10 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 3rem 0;
+  padding: 4rem 0;
   ${device.tablet`
   flex-direction: row;
-  padding: 3rem 2%;
+  padding: 4rem 2%;
   `}
 `;
 
