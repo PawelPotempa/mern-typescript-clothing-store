@@ -12,7 +12,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .slick-slider {
-position: relative;
+    position: relative;
   }
 
 `;

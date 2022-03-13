@@ -19,6 +19,9 @@ export const CategoryWrapper = styled.div`
 
   ${device.tablet`
   flex-direction: column;
+  max-width: 30%;
+  width: 12rem;
+  padding: 0.5rem 0;
   `}
 `;
 
@@ -26,6 +29,9 @@ export const Category = styled.ul`
   padding: 0;
   font-size: 1.25rem;
   line-height: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: Center;
 `;
 
 export const CategoryName = styled.p`
@@ -35,4 +41,8 @@ export const CategoryName = styled.p`
 export const CategoryItem = styled.li`
   list-style-type: none;
   padding: 0 1rem;
+
+  ${device.tablet`
+  padding: 0;
+  `}
 `;
