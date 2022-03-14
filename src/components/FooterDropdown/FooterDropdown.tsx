@@ -11,9 +11,10 @@ export interface IProps {
       path: string;
     }[];
   };
+  width?: string;
 }
 
-const FooterDropdown = ({ category }: IProps) => {
+const FooterDropdown = ({ category, width }: IProps) => {
   const [subnav, setSubnav] = useState(false);
 
   // Detect the device. Possible fix required: while using devtools, sometimes navbar items become unresponsive
@@ -40,11 +41,11 @@ const FooterDropdown = ({ category }: IProps) => {
 
         {subnav &&
           category.subMenu?.map((item) => {
-            return <s.CategoryItem>{item.title}</s.CategoryItem>;
+            return <s.CategoryItem width={width}>{item.title}</s.CategoryItem>;
           })}
         {isNotMobile &&
           category.subMenu?.map((item) => {
-            return <s.CategoryItem>{item.title}</s.CategoryItem>;
+            return <s.CategoryItem width={width}>{item.title}</s.CategoryItem>;
           })}
       </s.Category>
       {!isNotMobile && subnav ? (

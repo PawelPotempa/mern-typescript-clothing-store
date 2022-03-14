@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HimHome from "./pages/HimHome";
 import HerHome from "./pages/HerHome";
 import SingleProduct from "./pages/SingleProduct";
+import ShoppingCart from "./pages/ShoppingCart";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/him" element={<HimHome />} />
         <Route path="/her" element={<HerHome />} />
         <Route path="/singleproduct" element={<SingleProduct />} />
+        <Route path="/cart" element={<ShoppingCart />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>

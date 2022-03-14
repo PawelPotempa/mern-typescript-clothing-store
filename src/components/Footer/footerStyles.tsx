@@ -1,14 +1,20 @@
 import styled from "styled-components";
 import { device } from "../../mediaQueries";
 
-export const Container = styled.footer`
-  width: 100%;
+interface IProps {
+  width?: string;
+}
+
+export const Container = styled.footer<IProps>`
   border-top: 1px solid lightgrey;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 3rem 0 1rem 0;
+  margin: ${(props) =>
+    props.width === "narrow" ? "0 0 1rem 0" : "3rem 0 1rem 0"};
+  ${(props) =>
+    device.tablet(`max-width: ${props.width === "narrow" ? "70%" : "100%"}`)};
 `;
 
 export const Categories = styled.div`

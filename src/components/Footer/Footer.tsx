@@ -4,12 +4,18 @@ import { Facebook, Twitter, Instagram } from "@material-ui/icons";
 import { footerCategories } from "../footerData";
 import FooterDropdown from "../FooterDropdown/FooterDropdown";
 
-const Footer = () => {
+export interface IProps {
+  width?: string;
+}
+
+const Footer = ({ width }: IProps) => {
   return (
-    <s.Container>
+    <s.Container width={width}>
       <s.Categories>
         {footerCategories.map((category, index) => {
-          return <FooterDropdown key={index} category={category} />;
+          return (
+            <FooterDropdown key={index} category={category} width={width} />
+          );
         })}
       </s.Categories>
       <s.Social>
