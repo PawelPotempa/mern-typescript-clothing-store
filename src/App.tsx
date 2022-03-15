@@ -6,6 +6,7 @@ import HimHome from "./pages/HimHome";
 import HerHome from "./pages/HerHome";
 import SingleProduct from "./pages/SingleProduct";
 import ShoppingCart from "./pages/ShoppingCart";
+import ProductList from "./pages/ProductList";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/her" element={<HerHome />} />
         <Route path="/singleproduct" element={<SingleProduct />} />
         <Route path="/cart" element={<ShoppingCart />} />
+        <Route path="/shoes" element={<ProductList />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>
