@@ -1,165 +1,116 @@
 export const herNavData = [
   {
     title: "NEW",
-    path: "/new",
+    path: "new",
   },
   {
     title: "CLOTHING",
-    path: "/clothing",
+    path: "clothing",
     subMenu: [
       {
         title: "Pants",
-        path: "/pants",
+        path: "pants",
       },
-      {
-        title: "Skirts",
-        path: "/skirts",
-      },
+
       {
         title: "T-shirts and tops",
-        path: "/tshirtsandtops",
+        path: "tshirtsandtops",
       },
       {
         title: "Sweaters",
-        path: "/sweaters",
-      },
-      {
-        title: "Jumpsuits",
-        path: "/jumpsuits",
-      },
-      {
-        title: "Sportswear",
-        path: "/sportswear",
+        path: "sweaters",
       },
     ],
   },
   {
     title: "FOOTWEAR",
-    path: "/footwear",
+    path: "footwear",
     subMenu: [
       {
         title: "Boots",
-        path: "/boots",
+        path: "boots",
       },
       {
         title: "Flip flops",
-        path: "/flipflops",
-      },
-      {
-        title: "Sliders",
-        path: "/sliders",
+        path: "flipflops",
       },
       {
         title: "Trainers",
-        path: "/trainers",
+        path: "trainers",
       },
     ],
   },
   {
     title: "ACCESSORIES",
-    path: "/accessories",
+    path: "accessories",
     subMenu: [
       {
         title: "Bags & Backpacks",
-        path: "/bagsandbackpacks",
+        path: "bagsandbackpacks",
       },
       {
         title: "Hats & Caps",
-        path: "/hatsandcaps",
+        path: "hatsandcaps",
       },
-      {
-        title: "Underwear",
-        path: "/underwear",
-      },
-      {
-        title: "Socks",
-        path: "/socks",
-      },
-      { title: "Scarves", path: "/scarves" },
     ],
   },
-  { title: "SALE", path: "/sale" },
+  { title: "SALE", path: "sale" },
 ];
 
 export const himNavData = [
   {
     title: "NEW",
-    path: "/new",
+    path: "new",
   },
   {
     title: "CLOTHING",
-    path: "/clothing",
+    path: "clothing",
     subMenu: [
       {
         title: "Joggers",
-        path: "/joggers",
-      },
-      {
-        title: "Shorts",
-        path: "/shorts",
-      },
-      {
-        title: "T-shirts",
-        path: "/tshirts",
+        path: "joggers",
       },
       {
         title: "Sweaters",
-        path: "/sweaters",
+        path: "sweaters",
       },
       {
         title: "Polo shirts",
-        path: "/poloshirts",
-      },
-      {
-        title: "sportswear",
-        path: "/sportswear",
+        path: "poloshirts",
       },
     ],
   },
   {
     title: "FOOTWEAR",
-    path: "/footwear",
+    path: "footwear",
     subMenu: [
       {
         title: "Boots",
-        path: "/boots",
+        path: "boots",
       },
       {
         title: "Flip flops",
-        path: "/flipflops",
-      },
-      {
-        title: "Sliders",
-        path: "/sliders",
+        path: "flipflops",
       },
       {
         title: "Trainers",
-        path: "/trainers",
+        path: "trainers",
       },
     ],
   },
   {
     title: "ACCESSORIES",
-    path: "/accessories",
+    path: "accessories",
     subMenu: [
       {
-        title: "Bags & Backpacks",
-        path: "/bagsandbackpacks",
-      },
-      {
         title: "Hats & Caps",
-        path: "/hatsandcaps",
-      },
-      {
-        title: "Underwear",
-        path: "/underwear",
+        path: "hatsandcaps",
       },
       {
         title: "Socks",
-        path: "/socks",
+        path: "socks",
       },
-      { title: "belts", path: "/belts" },
     ],
   },
-  { title: "SALE", path: "/sale" },
+  { title: "SALE", path: "sale" },
 ];

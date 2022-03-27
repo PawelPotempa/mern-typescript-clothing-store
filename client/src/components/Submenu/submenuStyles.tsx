@@ -5,9 +5,6 @@ import { Add, Remove } from "@material-ui/icons";
 export const ItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-
-  ${device.tablet`
-  `}
 `;
 
 export const SidebarItem = styled.li`
@@ -39,6 +36,7 @@ export const MinusIcon = styled(Remove)``;
 
 export const SubnavWrapper = styled.ul`
   ${device.tablet`
+  padding: 0;
   position: absolute;
   display: flex;
   top: 40px;
@@ -55,5 +53,33 @@ export const SubmenuItem = styled.li`
   ${device.tablet`
   padding: 15px;
   color: white;
+    text-shadow:
+    0.05em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black,
+        -0.07em -0.07em black,
+        -0.07em 0.07em black,
+        0.07em -0.07em black,
+        0.07em 0.07em black;
+
+  // ::before {
+  //   content: '';
+  //   position: absolute;
+  //   width: 100%;
+  //   height: 4px;
+  //   border-radius: 4px;
+  //   background-color: #fff;
+  //   bottom: 0;
+  //   left: 0;
+  //   transform-origin: right;
+  //   transform: scaleX(0);
+  //   transition: transform .3s ease-in-out;
+  // }
+
+  // :hover::before {
+  //   transform-origin: left;
+  //   transform: scaleX(1);
+  // }
   `}
 `;

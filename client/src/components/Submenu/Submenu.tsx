@@ -1,6 +1,8 @@
 import React, { useState, MouseEvent } from "react";
 import * as s from "./submenuStyles";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export interface IProps {
   item:
@@ -20,6 +22,8 @@ export interface IProps {
 }
 
 const Submenu = ({ item }: IProps) => {
+  const genderState = useSelector((state: any) => state.gender);
+
   const [subnav, setSubnav] = useState(false);
 
   // Show product categories.
@@ -38,8 +42,12 @@ const Submenu = ({ item }: IProps) => {
   };
 
   // Map through items inside subMenu property inside of relevant navigationData object.
-  const populateSubmenu = item.subMenu?.map((item, index) => {
-    return <s.SubmenuItem key={index}>{item.title}</s.SubmenuItem>;
+  const populateSubmenu = item.subMenu?.map((menu, index) => {
+    return (
+      <Link to={`/${genderState.gender}/${menu.path}/products`}>
+        <s.SubmenuItem key={index}>{menu.title}</s.SubmenuItem>
+      </Link>
+    );
   });
 
   // Detect the device. Possible fix required: while using devtools, sometimes navbar items become unresponsive
@@ -55,7 +63,13 @@ const Submenu = ({ item }: IProps) => {
         onClick={isTabletOrMobile && item.subMenu ? clickHandler : () => false}
         onMouseLeave={isTabletOrMobile ? () => false : mouseLeaveHandler}
       >
-        <s.SidebarItem>{item.title}</s.SidebarItem>
+        <Link
+          to={
+            !item.subMenu ? `/${genderState.gender}/${item.path}/products` : ""
+          }
+        >
+          <s.SidebarItem>{item.title}</s.SidebarItem>
+        </Link>
         {item.subMenu && subnav ? (
           <s.IconWrapper>
             <s.MinusIcon />

@@ -45,6 +45,7 @@ export const TabLabel = styled(Link)<IProps>`
   text-align: center;
   line-height: 40px;
   border-bottom: ${(p) => (p.active === "true" ? "2px solid black" : "none")};
+  cursor: pointer;
 
   :last-child::before {
     content: "";

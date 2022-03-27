@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { device } from "../../mediaQueries";
-import { MenuOpen, Search, Close } from "@material-ui/icons";
+import {
+  MenuOpen,
+  Search,
+  Close,
+  ShoppingCartOutlined,
+} from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 export const Container = styled.nav`
@@ -12,7 +17,7 @@ export const Container = styled.nav`
 
 export const Wrapper = styled.div`
   height: 40px;
-  padding: 10px 15px;
+  padding: 10px 30px 10px 15px;
   border-bottom: 1px solid lightgrey;
   display: flex;
   align-items: center;
@@ -47,6 +52,7 @@ export const Logo = styled(Link)`
   color: black;
   font-size: 1.5rem;
   letter-spacing: 0.25em;
+  cursor: pointer;
 `;
 
 export const Center = styled.ul`
@@ -100,4 +106,8 @@ export const SearchInput = styled.input`
 
 export const SearchIcon = styled(Search)`
   padding: 0;
+`;
+
+export const CartIcon = styled(ShoppingCartOutlined)`
+  cursor: pointer;
 `;

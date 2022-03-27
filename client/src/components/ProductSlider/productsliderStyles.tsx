@@ -12,6 +12,7 @@ export const Container = styled.div<IProps>`
 
 export const SliderItem = styled.div`
   padding: 0 5%;
+  cursor: pointer;
 `;
 
 export const ProductImage = styled.img`

@@ -37,6 +37,7 @@ export const Label = styled(Link)`
   height: 100%;
   text-align: center;
   line-height: 50vh;
+  cursor: pointer;
 `;
 
 export const Logo = styled.h1`

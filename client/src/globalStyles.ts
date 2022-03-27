@@ -15,6 +15,10 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
   }
 
+  a {
+    all: unset;
+  }
+
 `;
 
 export default GlobalStyle;

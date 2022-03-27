@@ -25,13 +25,11 @@ const FooterDropdown = ({ category, width }: IProps) => {
   // despite screen resolution change.
   useEffect(() => {
     setSubnav(false);
-    console.log("I see that!");
   }, [isNotMobile]);
 
   // Show submenu items.
   const clickHandler = (e: MouseEvent<HTMLElement>) => {
     setSubnav(!subnav);
-    console.log(subnav);
   };
 
   return (
@@ -40,12 +38,20 @@ const FooterDropdown = ({ category, width }: IProps) => {
         <s.CategoryName>{category.title}</s.CategoryName>
 
         {subnav &&
-          category.subMenu?.map((item) => {
-            return <s.CategoryItem width={width}>{item.title}</s.CategoryItem>;
+          category.subMenu?.map((item, index) => {
+            return (
+              <s.CategoryItem key={index} width={width}>
+                {item.title}
+              </s.CategoryItem>
+            );
           })}
         {isNotMobile &&
-          category.subMenu?.map((item) => {
-            return <s.CategoryItem width={width}>{item.title}</s.CategoryItem>;
+          category.subMenu?.map((item, index) => {
+            return (
+              <s.CategoryItem key={index} width={width}>
+                {item.title}
+              </s.CategoryItem>
+            );
           })}
       </s.Category>
       {!isNotMobile && subnav ? (

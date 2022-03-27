@@ -15,9 +15,13 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/him" element={<HimHome />} />
         <Route path="/her" element={<HerHome />} />
-        <Route path="/singleproduct" element={<SingleProduct />} />
+        <Route path="/:gender/:id" element={<SingleProduct />} />
         <Route path="/cart" element={<ShoppingCart />} />
-        <Route path="/shoes" element={<ProductList />} />
+        <Route
+          path="/:gender/:subcategory/products"
+          element={<ProductList />}
+        />
+        <Route path="/:gender/:category/products" element={<ProductList />} />
       </Routes>
       <GlobalStyle />
     </BrowserRouter>

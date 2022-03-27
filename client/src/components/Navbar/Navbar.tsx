@@ -1,5 +1,6 @@
 import React from "react";
 import { Badge } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import { herNavData, himNavData } from "../navigationData";
 import Sidebar from "../Sidebar/Sidebar";
@@ -7,6 +8,18 @@ import * as s from "./navbarStyles";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal, closeModal } from "../../redux/sidebarModal";
 import Submenu from "../Submenu/Submenu";
+import { Link } from "react-router-dom";
+
+// MaterialUI badge styling
+const useStyles = makeStyles((theme) => ({
+  badge: {
+    height: 18,
+    minWidth: 16,
+    padding: "0px 5px",
+    top: 5,
+    right: 2,
+  },
+}));
 
 const Navbar = () => {
   // Redux states
@@ -14,6 +27,7 @@ const Navbar = () => {
   const modalState = useSelector((state: any) => state.sidebarModal);
   const genderState = useSelector((state: any) => state.gender);
   const dispatch = useDispatch();
+  const classes = useStyles();
 
   return (
     <>
@@ -57,8 +71,14 @@ const Navbar = () => {
               <s.SearchInput />
               <s.SearchIcon />
             </s.SearchContainer>
-            <Badge badgeContent={0} color="primary">
-              <ShoppingCartOutlined />
+            <Badge
+              badgeContent={3}
+              color="primary"
+              classes={{ badge: classes.badge }}
+            >
+              <Link to="/cart">
+                <s.CartIcon />
+              </Link>
             </Badge>
           </s.Right>
         </s.Wrapper>
@@ -67,7 +87,6 @@ const Navbar = () => {
           <s.SearchInput placeholder="What are you looking for?" />
         </s.MobileSearch>
       </s.Container>
-      {/* {target.length > 0 && <Dropdown target={target} />} */}
       {modalState.toggle && <Sidebar />}
     </>
   );

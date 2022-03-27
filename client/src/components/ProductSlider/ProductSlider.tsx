@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as s from "./productsliderStyles";
 import Slider from "react-slick";
 import { ArrowBackRounded, ArrowForwardRounded } from "@material-ui/icons";
-import { himProducts, herProducts, centerProducts } from "./productData";
+import { centerProducts } from "./productData";
 import { useSelector } from "react-redux";
 import { IProps } from "../BannerSlider/BannerSlider";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ProductSlider = ({ position }: IProps) => {
   const genderState = useSelector((state: any) => state.gender);
+
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await axios.get(
+          genderState.gender === "her"
+            ? "http://localhost:5001/api/products?category=her"
+            : genderState.gender === "him"
+            ? "http://localhost:5001/api/products?category=him"
+            : "http://localhost:5001/api/products"
+        );
+        setProducts(res.data);
+      } catch (err) {}
+    };
+    getProducts();
+  }, [genderState]);
 
   // Add react-slick custom back button
   const ArrowBack = (props: any) => {
@@ -68,27 +88,17 @@ const ProductSlider = ({ position }: IProps) => {
   // (select products, pop them into a new array, map that array depending on ProductSlider "position" property)
   return (
     <s.Container banner={position}>
-      {genderState.gender === "her" && position === "top" ? (
+      {position === "top" && products.length > 0 ? (
         <Slider {...settings}>
-          {herProducts.map((product, index) => {
+          {products.map((product, index) => {
             return (
-              <s.SliderItem key={index}>
-                <s.ProductImage src={product.url}></s.ProductImage>
-                <s.ProductName>{product.name}</s.ProductName>
-                <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
-              </s.SliderItem>
-            );
-          })}
-        </Slider>
-      ) : genderState.gender === "him" && position === "top" ? (
-        <Slider {...settings}>
-          {himProducts.map((product, index) => {
-            return (
-              <s.SliderItem key={index}>
-                <s.ProductImage src={product.url}></s.ProductImage>
-                <s.ProductName>{product.name}</s.ProductName>
-                <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
-              </s.SliderItem>
+              <Link key={index} to={`/${genderState.gender}/${product._id}`}>
+                <s.SliderItem>
+                  <s.ProductImage src={product.img}></s.ProductImage>
+                  <s.ProductName>{product.title}</s.ProductName>
+                  <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
+                </s.SliderItem>
+              </Link>
             );
           })}
         </Slider>
@@ -96,11 +106,13 @@ const ProductSlider = ({ position }: IProps) => {
         <Slider {...settings}>
           {centerProducts.map((product, index) => {
             return (
-              <s.SliderItem key={index}>
-                <s.ProductImage src={product.url}></s.ProductImage>
-                <s.ProductName>{product.name}</s.ProductName>
-                <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
-              </s.SliderItem>
+              <Link key={index} to={`/unisex/${product._id}`}>
+                <s.SliderItem>
+                  <s.ProductImage src={product.url}></s.ProductImage>
+                  <s.ProductName>{product.name}</s.ProductName>
+                  <s.ProductPrice>{product.price} ZŁ</s.ProductPrice>
+                </s.SliderItem>
+              </Link>
             );
           })}
         </Slider>
